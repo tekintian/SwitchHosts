@@ -89,6 +89,7 @@ jobs:
 
       - name: Cleanup Electron cache
         if: always()
+        shell: bash
         run: |
           rm -rf ${{ env.ELECTRON_CACHE }}
           rm -rf ${{ env.ELECTRON_BUILDER_CACHE }}
