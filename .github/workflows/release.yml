@@ -77,9 +77,14 @@ jobs:
 
       - name: Upload to GitHub Releases
         uses: softprops/action-gh-release@v1
-        if: startsWith(github.ref, 'refs/tags/')
+        if: startsWith(github.ref, 'refs/tags/') && matrix.os == 'ubuntu-latest'
         with:
-          files: dist/**
+          files: |
+            dist/*.dmg
+            dist/*.exe
+            dist/*.zip
+            dist/*.AppImage
+            dist/*.deb
           prerelease: ${{ contains(github.ref, '-beta') || contains(github.ref, '-alpha') }}
           fail_on_unmatched_files: false
         env:
