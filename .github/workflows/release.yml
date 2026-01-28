@@ -65,6 +65,7 @@ jobs:
           CSC_KEY_PASSWORD: ${{ secrets.WIN_CSC_KEY_PASSWORD || '' }}
           IDENTITY: ''
           MAKE_FOR: ${{ contains(matrix.os, 'macos') && 'mac' || contains(matrix.os, 'windows') && 'win' || 'linux' }}
+          GH_TOKEN: ''
 
       - name: Upload artifacts
         uses: actions/upload-artifact@v4
