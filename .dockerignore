@@ -1,0 +1,57 @@
+# Dependencies
+node_modules
+npm-debug.log
+yarn-error.log
+
+# Build outputs
+build
+dist
+out
+
+# Git
+.git
+.gitignore
+.github
+
+# IDE
+.idea
+.vscode
+*.swp
+*.swo
+.DS_Store
+
+# Test
+test
+tmp
+
+# Documentation
+*.md
+!README.md
+
+# Misc
+.env
+.env.local
+*.log
+.sentryclirc
+
+# Alfred workflow
+alfred
+
+# Screenshots
+screenshots
+
+# Cache
+.cache
+.nyc_output
+coverage
+
+# Misc files
+.travis.yml
+.editorconfig
+.prettierignore
+.prettierrc.json
+.eslintrc.js
+.eslintignore
+
+# Electron
+.electron

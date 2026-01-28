@@ -18,7 +18,7 @@
 - [简体中文](README.zh_hans.md)
 - [繁體中文](README.zh_hant.md)
 
-Strona główna: [https://switchhosts.vercel.app](https://switchhosts.vercel.app)
+Strona główna: [https://dev.tekin.cn](https://dev.tekin.cn)
 
 SwitchHosts to aplikacja do zarządzania plikiem hosts, zbudowana na bazie [Electron](http://electron.atom.io/), [React](https://facebook.github.io/react/), [Jotai](https://jotai.org/), [Chakra UI](https://chakra-ui.com/), [CodeMirror](http://codemirror.net/) i innych.
 
@@ -39,7 +39,7 @@ SwitchHosts to aplikacja do zarządzania plikiem hosts, zbudowana na bazie [Elec
 
 Możesz pobrać kod źródłowy i zbudować go samodzielnie, lub pobrać wbudowaną wersję z poniższych linków:
 
-- [Pobierz najnowszą wersję SwitchHosts (GitHub release)](https://github.com/oldj/SwitchHosts/releases)
+- [Pobierz najnowszą wersję SwitchHosts (GitHub release)](https://github.com/tekintian/SwitchHosts/releases)
 
 Możesz także zainstalować build używając [menedżera pakietów Chocolatey](https://community.chocolatey.org/packages/switchhosts):
 ```powershell

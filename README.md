@@ -18,7 +18,7 @@
 - [简体中文](README.zh_hans.md)
 - [繁體中文](README.zh_hant.md)
 
-Homepage: [https://switchhosts.vercel.app](https://switchhosts.vercel.app)
+Homepage: [https://dev.tekin.cn](https://dev.tekin.cn)
 
 SwitchHosts is an App for managing hosts file, it is based on [Electron](http://electron.atom.io/)
 , [React](https://facebook.github.io/react/), [Jotai](https://jotai.org/)
@@ -42,7 +42,7 @@ SwitchHosts is an App for managing hosts file, it is based on [Electron](http://
 You can download the source code and build it yourself, or download the built version from following
 links:
 
-- [SwitchHosts Download Page (GitHub release)](https://github.com/oldj/SwitchHosts/releases)
+- [SwitchHosts Download Page (GitHub release)](https://github.com/tekintian/SwitchHosts/releases)
 
 You can also install the built version using the [package manager Chocolatey](https://community.chocolatey.org/packages/switchhosts):
 ```powershell
@@ -59,31 +59,41 @@ folder contains various configuration information.
 
 ### Development
 
-- Install [Node.js](https://nodejs.org/)
+- Install [Node.js](https://nodejs.org/) (>= 18.0.0)
 - Change to the folder `./`, run `npm install` to install dependented libraries
 - Run `npm run dev` to start the development server
 - Then run `npm run start` to start the app for developing or debuging
 
 ### Build and package
 
-- It is recommended to use [electron-builder](https://github.com/electron-userland/electron-builder)
-  for packaging
-- Go to the `./` folder
-- Run `npm run build`
-- Run `npm run make`, if everything goes well, the packaged files will be in the `./dist` folder.
-- This command may take several minutes to finish when you run it the first time, as it needs time
+For detailed build instructions, see [BUILD_GUIDE.md](./BUILD_GUIDE.md).
+
+Quick build (dev mode, skip signing):
+```bash
+# build
+npm run build
+
+# make (dev mode - skip signing and notarization)
+npm run make:dev # the packed files will be in ./dist
+```
+
+For production builds with code signing, see [BUILD_GUIDE.md](./BUILD_GUIDE.md).
+
+**Note**: It is recommended to use [electron-builder](https://github.com/electron-userland/electron-builder)
+  for packaging. This command may take several minutes to finish when you run it the first time, as it needs time
   to download dependent files. You can download the dependencies
   manually [here](https://github.com/electron/electron/releases),
   or [Taobao mirror](https://npmmirror.com/mirrors/electron/), then save the files to `~/.electron`
   . You can check the [Electron Docs](http://electron.atom.io/docs/) for more infomation.
 
-```bash
-# build
-npm run build
+## Contributing
 
-# make
-npm run make # the packed files will be in ./dist
-```
+For contribution guidelines and CI/CD information, see [CI_CD_GUIDE.md](./CI_CD_GUIDE.md).
+
+## Security
+
+For security guidelines and best practices, see [SECURITY.md](./SECURITY.md).
+
 
 ## Copyright
 

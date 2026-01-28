@@ -1,0 +1,26 @@
+# CodeQL Configuration for SwitchHosts
+# This file configures CodeQL analysis for the project
+
+queries:
+  - uses: security-and-quality
+
+query-filters:
+  - exclude:
+      id:
+        - js/pql-results/call-to-non-callable
+        - js/pql-results/missing-catch-clause
+
+packs:
+  javascript:
+    - codeql/javascript-queries:security-and-quality@v0.10.0
+
+paths:
+  - src
+  - scripts
+
+paths-ignore:
+  - node_modules
+  - dist
+  - build
+  - .cache
+  - test

@@ -1,0 +1,98 @@
+# Automatic issue labeling
+# Label issues based on their title or content
+
+bug:
+  - "[BUG]"
+  - "bug"
+  - "crash"
+  - "crash report"
+  - "error"
+  - "issue"
+
+enhancement:
+  - "[FEATURE]"
+  - "feature request"
+  - "enhancement"
+  - "new feature"
+  - "improvement"
+
+documentation:
+  - "docs"
+  - "documentation"
+  - "readme"
+  - "guide"
+
+security:
+  - "[SECURITY]"
+  - "security"
+  - "vulnerability"
+  - "xss"
+  - "injection"
+
+performance:
+  - "performance"
+  - "slow"
+  - "optimize"
+  - "optimization"
+
+ui:
+  - "ui"
+  - "design"
+  - "interface"
+  - "theme"
+  - "style"
+
+i18n:
+  - "i18n"
+  - "translation"
+  - "locale"
+  - "language"
+
+build:
+  - "build"
+  - "compile"
+  - "package"
+  - "installer"
+  - "dmg"
+  - "exe"
+
+dependencies:
+  - "dependency"
+  - "npm"
+  - "upgrade"
+  - "update"
+
+macos:
+  - "mac"
+  - "macos"
+  - "darwin"
+  - "osx"
+
+windows:
+  - "windows"
+  - "win"
+  - "win32"
+
+linux:
+  - "linux"
+  - "ubuntu"
+  - "debian"
+  - "fedora"
+
+docker:
+  - "docker"
+  - "container"
+
+testing:
+  - "test"
+  - "spec"
+  - "unit test"
+  - "e2e"
+
+good first issue:
+  - "good first issue"
+  - "beginner"
+  - "starter"
+
+help wanted:
+  - "help wanted"

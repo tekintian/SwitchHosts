@@ -18,7 +18,7 @@
 - [Polski](README.pl.md)
 - [繁體中文](README.zh_hant.md)
 
-项目主页：[https://switchhosts.vercel.app](https://switchhosts.vercel.app)
+项目主页：[https://dev.tekin.cn](https://dev.tekin.cn)
 
 SwitchHosts 是一个管理 hosts 文件的应用，基于 [Electron](http://electron.atom.io/)
 、[React](https://facebook.github.io/react/)、[Jotai](https://jotai.org/)
@@ -41,7 +41,7 @@ SwitchHosts 是一个管理 hosts 文件的应用，基于 [Electron](http://ele
 
 你可以下载源码并自行构建，也可以从以下地址下载已构建好的版本：
 
-- [SwitchHosts Download Page (GitHub release)](https://github.com/oldj/SwitchHosts/releases)
+- [SwitchHosts Download Page (GitHub release)](https://github.com/tekintian/SwitchHosts/releases)
 
 你也可以通过 [Chocolatey 包管理器](https://community.chocolatey.org/packages/switchhosts)安装已构建好的版本：
 ```powershell
