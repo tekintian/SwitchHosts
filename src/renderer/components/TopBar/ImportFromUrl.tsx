@@ -53,6 +53,37 @@ const ImportFromUrl = (props: Props) => {
     let t0 = new Date().getTime()
 
     if (url) {
+      // Validate URL more strictly
+      try {
+        const urlObj = new URL(url)
+        // Only allow http or https protocols
+        if (!['http:', 'https:'].includes(urlObj.protocol)) {
+          throw new Error('Invalid protocol')
+        }
+        // Block localhost and private IPs
+        const hostname = urlObj.hostname
+        const privatePatterns = [
+          /^localhost$/,
+          /^127\./,
+          /^0\.0\.0\.0$/,
+          /^::1$/,
+          /^10\./,
+          /^172\.(1[6-9]|2[0-9]|3[0-1])\./,
+          /^192\.168\./,
+        ]
+        if (privatePatterns.some((pattern) => pattern.test(hostname))) {
+          throw new Error('Private IP addresses are not allowed')
+        }
+      } catch (e) {
+        toast({
+          status: 'error',
+          description: lang.import_fail + ` [Invalid URL: ${e}]`,
+          isClosable: true,
+        })
+        setUrl('')
+        return
+      }
+
       let r = await actions.importDataFromUrl(url)
       console.log(r)
 

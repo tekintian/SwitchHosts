@@ -2,9 +2,21 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
     <dict>
+        <!-- These permissions are needed for Electron to function properly -->
+        <!-- allow-unsigned-executable-memory: Required for V8 JIT compilation -->
         <key>com.apple.security.cs.allow-unsigned-executable-memory</key>
         <true/>
+        <!-- allow-jit: Required for JavaScript JIT compilation -->
         <key>com.apple.security.cs.allow-jit</key>
+        <true/>
+        <!-- disable-executable-page-protection: Required for JIT -->
+        <key>com.apple.security.cs.disable-executable-page-protection</key>
+        <true/>
+        <!-- allow-dyld-environment-variables: May be needed for some dependencies -->
+        <key>com.apple.security.cs.allow-dyld-environment-variables</key>
+        <true/>
+        <!-- Disable library validation to allow system libraries -->
+        <key>com.apple.security.cs.disable-library-validation</key>
         <true/>
     </dict>
 </plist>

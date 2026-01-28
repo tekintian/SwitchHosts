@@ -1,5 +1,9 @@
 {
   "private": true,
+  "engines": {
+    "node": ">=18.0.0",
+    "npm": ">=9.0.0"
+  },
   "scripts": {
     "start": "cross-env NODE_ENV=development electron ./build/main.js",
     "test": "rm -rf ./test/tmp/* && mocha -r espower-typescript/guess -r tsconfig-paths/register \"test/**/*.test.ts\"",

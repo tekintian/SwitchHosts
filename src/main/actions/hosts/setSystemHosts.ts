@@ -68,10 +68,15 @@ const writeWithSudo = (sys_hosts_path: string, content: string): Promise<IWriteR
     let tmp_fn = path.join(os.tmpdir(), `swh_${new Date().getTime()}_${Math.random()}.txt`)
     fs.writeFileSync(tmp_fn, content, 'utf-8')
 
+    // Use safer command execution with properly escaped password
+    const escaped_pswd = safePSWD(sudo_pswd)
+    const escaped_path = sys_hosts_path.replace(/'/g, "'\\''")
+    const escaped_tmp = tmp_fn.replace(/'/g, "'\\''")
+
     let cmd = [
-      `echo '${sudo_pswd}' | sudo -S chmod 777 ${sys_hosts_path}`,
-      `cat "${tmp_fn}" > ${sys_hosts_path}`,
-      `echo '${sudo_pswd}' | sudo -S chmod 644 ${sys_hosts_path}`,
+      `echo ${escaped_pswd} | sudo -S chmod 777 ${escaped_path}`,
+      `cat ${escaped_tmp} > ${escaped_path}`,
+      `echo ${escaped_pswd} | sudo -S chmod 644 ${escaped_path}`,
       // , 'rm -rf ' + tmp_fn
     ].join(' && ')
 
