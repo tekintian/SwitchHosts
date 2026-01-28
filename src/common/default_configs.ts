@@ -30,6 +30,7 @@ const configs = {
   proxy_port: 0,
   http_api_on: false,
   http_api_only_local: true,
+  http_api_key: '',
   tray_mini_window: true,
   multi_chose_folder_switch_all: false,
 

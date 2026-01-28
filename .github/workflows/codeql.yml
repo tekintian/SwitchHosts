@@ -2,10 +2,10 @@ name: CodeQL Analysis
 
 on:
   workflow_dispatch:
-  # push:
-  #   branches: [main, master]
-  # pull_request:
-  #   branches: [main, master]
+  push:
+    branches: [main, master]
+  pull_request:
+    branches: [main, master]
   # schedule:
   #   # Run CodeQL analysis daily at 2:00 UTC
   #   - cron: '0 2 * * *'

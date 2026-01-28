@@ -40,9 +40,6 @@ interface IWidthId extends IWithChildren {
   id: string
 }
 
-export function getNodeById<T extends IWidthId>(
-  tree_list: T[],
-  id: string,
-): T | undefined {
+export function getNodeById<T extends IWidthId>(tree_list: T[], id: string): T | undefined {
   return flatten(tree_list).find((i) => i.id === id)
 }

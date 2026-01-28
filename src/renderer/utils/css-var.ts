@@ -5,7 +5,5 @@
  */
 
 export const getCssVar = (name: string): string => {
-  return getComputedStyle(document.documentElement)
-    .getPropertyValue(name)
-    .trim()
+  return getComputedStyle(document.documentElement).getPropertyValue(name).trim()
 }

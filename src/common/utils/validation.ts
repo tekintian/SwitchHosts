@@ -50,18 +50,17 @@ export const sanitizeInput = (input: string): string => {
     return ''
   }
 
-  return input
-    .replace(/[&<>"'/]/g, (char) => {
-      const escapeMap: Record<string, string> = {
-        '&': '&amp;',
-        '<': '&lt;',
-        '>': '&gt;',
-        '"': '&quot;',
-        "'": '&#x27;',
-        '/': '&#x2F;',
-      }
-      return escapeMap[char]
-    })
+  return input.replace(/[&<>"'/]/g, (char) => {
+    const escapeMap: Record<string, string> = {
+      '&': '&amp;',
+      '<': '&lt;',
+      '>': '&gt;',
+      '"': '&quot;',
+      "'": '&#x27;',
+      '/': '&#x2F;',
+    }
+    return escapeMap[char]
+  })
 }
 
 /**
@@ -116,7 +115,8 @@ export const isValidHostname = (hostname: string): boolean => {
   }
 
   // RFC 1123 hostname pattern
-  const hostnamePattern = /^[a-zA-Z0-9]([a-zA-Z0-9\-]{0,61}[a-zA-Z0-9])?(\.[a-zA-Z0-9]([a-zA-Z0-9\-]{0,61}[a-zA-Z0-9])?)*$/
+  const hostnamePattern =
+    /^[a-zA-Z0-9]([a-zA-Z0-9\-]{0,61}[a-zA-Z0-9])?(\.[a-zA-Z0-9]([a-zA-Z0-9\-]{0,61}[a-zA-Z0-9])?)*$/
 
   // Check length (max 253 characters per RFC)
   if (hostname.length > 253) {

@@ -19,8 +19,7 @@ export default {
   check_update: 'Check update',
   choice_mode: 'Choice mode',
   choice_mode_default: 'Default',
-  choice_mode_desc:
-    'Only valid for the topmost item, each folder can set its own choice mode.',
+  choice_mode_desc: 'Only valid for the topmost item, each folder can set its own choice mode.',
   choice_mode_multiple: 'Multiple',
   choice_mode_single: 'Single',
   choices: 'Choices',
@@ -30,8 +29,7 @@ export default {
   close: 'Close',
   colon: ': ',
   commands: 'Commands',
-  commands_help:
-    'The following system commands will be executed when Hosts applied:',
+  commands_help: 'The following system commands will be executed when Hosts applied:',
   commands_title: 'Command after hosts are applied',
   comment_current_line: 'Comment current line',
   content: 'Content',
@@ -102,8 +100,7 @@ export default {
   minutes: 'minutes',
   move_items_to_trashcan: 'Move {0} items to trashcan',
   move_to_trashcan: 'Move to trashcan',
-  multi_chose_folder_switch_all:
-    'multi-select folder switch to control sub-items',
+  multi_chose_folder_switch_all: 'multi-select folder switch to control sub-items',
   need_to_relaunch: 'Need to relaunch',
   need_to_relaunch_after_setting_changed:
     'The setting has been changed and will take effect after the app is restarted.',
@@ -150,8 +147,7 @@ export default {
   sudo_prompt_title: 'Input your sudo password',
   system_hosts: 'System Hosts',
   system_hosts_history: 'History versions of the System Hosts',
-  system_hosts_history_delete_confirm:
-    'Are you sure you want to delete this item?',
+  system_hosts_history_delete_confirm: 'Are you sure you want to delete this item?',
   system_hosts_history_help:
     'If the total number of historical records exceeds this limit, the oldest record will be deleted.',
   system_hosts_history_limit: 'Maximum number of records: ',
@@ -179,17 +175,14 @@ export default {
     'Would you like to help us improve SwitchHosts by periodically submitting anonymous usage data?',
   usage_data_title: 'Make SwitchHosts better!',
   use_proxy: 'Use proxy',
-  use_system_window_frame:
-    'Use system window frame, application restart is required',
+  use_system_window_frame: 'Use system window frame, application restart is required',
   view: 'View',
   where_is_my_data: 'Where is my data stored?',
   where_is_my_hosts: 'Where is my hosts file?',
   window: 'Window',
   write_mode: 'Write mode',
-  write_mode_append_help:
-    'Append the new records to the end of the system hosts file.',
-  write_mode_overwrite_help:
-    'Overwrite the system hosts file with the new records.',
+  write_mode_append_help: 'Append the new records to the end of the system hosts file.',
+  write_mode_overwrite_help: 'Overwrite the system hosts file with the new records.',
   write_mode_set: 'Set the write mode',
   your_data_is: 'Your data files are stored in:',
   your_hosts_file_is: 'Your hosts file is located at:',

@@ -1,7 +1,6 @@
-@import "../../styles/common";
+@import '../../styles/common';
 
 .root {
-
 }
 
 .node {
@@ -27,7 +26,7 @@
 }
 
 .node_drop_in {
-  div[data-role="tree-node-body"] {
+  div[data-role='tree-node-body'] {
     background: var(--swh-primary-color);
     color: var(--swh-font-color-reverse);
     border-radius: var(--swh-border-radius);

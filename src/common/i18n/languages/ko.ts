@@ -18,8 +18,7 @@ export default {
   check_update: '업데이트 확인',
   choice_mode: '선택 모드',
   choice_mode_default: '기본값',
-  choice_mode_desc:
-    '최상위 항목에만 유효하며, 각 폴더는 고유의 선택 모드를 설정할 수 있습니다.',
+  choice_mode_desc: '최상위 항목에만 유효하며, 각 폴더는 고유의 선택 모드를 설정할 수 있습니다.',
   choice_mode_multiple: '다중모드',
   choice_mode_single: '단일모드',
   choices: '선택',
@@ -29,8 +28,7 @@ export default {
   close: '닫기',
   colon: ': ',
   commands: '명령어',
-  commands_help:
-    '호스트를 적용하면 시스템에 명령어가 실행됩니다:',
+  commands_help: '호스트를 적용하면 시스템에 명령어가 실행됩니다:',
   commands_title: '호스트가 적용된 후 명령어',
   comment_current_line: '주석 현재 줄',
   content: '내용',
@@ -101,11 +99,9 @@ export default {
   minutes: '분',
   move_items_to_trashcan: '{0}개의 항목이 휴지통으로 이동',
   move_to_trashcan: '휴지통으로 이동',
-  multi_chose_folder_switch_all:
-    '하위 항목을 제어할 다중 선택 폴더 스위치',
+  multi_chose_folder_switch_all: '하위 항목을 제어할 다중 선택 폴더 스위치',
   need_to_relaunch: '다시 시작해야 함',
-  need_to_relaunch_after_setting_changed:
-    '설정이 변경되었으며 앱을 다시 시작한 후에 적용됩니다.',
+  need_to_relaunch_after_setting_changed: '설정이 변경되었으며 앱을 다시 시작한 후에 적용됩니다.',
   never: '절대',
   new: '신규',
   new_version_found: '새 버전을 찾았습니다',
@@ -134,8 +130,7 @@ export default {
   replace_all: '전체 대체하기',
   replace_history: '이력 교체',
   reset: '재설정',
-  reset_data_dir_confirm:
-    '이 데이터 폴더를 기본 경로({0})로 복원하시겠습니까?',
+  reset_data_dir_confirm: '이 데이터 폴더를 기본 경로({0})로 복원하시겠습니까?',
   reset_zoom: '확대 재설정',
   search: '찾기',
   select_all: '전체 선택',
@@ -149,10 +144,8 @@ export default {
   sudo_prompt_title: 'sudo password 입력',
   system_hosts: '시스템 호스트',
   system_hosts_history: '시스템 호스트의 이력버전',
-  system_hosts_history_delete_confirm:
-    '이 항목을 삭제하시겠습니까?',
-  system_hosts_history_help:
-    '이력 개수가 이 제한을 초과하면 가장 오래된 이력부터 삭제됩니다.',
+  system_hosts_history_delete_confirm: '이 항목을 삭제하시겠습니까?',
+  system_hosts_history_help: '이력 개수가 이 제한을 초과하면 가장 오래된 이력부터 삭제됩니다.',
   system_hosts_history_limit: '이력 최대 개수: ',
   test: '테스트',
   theme: '테마',
@@ -178,17 +171,14 @@ export default {
     '주기적으로 익명의 사용 데이터를 제출하여 SwitchHost를 개선하는 데 도움을 주시겠습니까?',
   usage_data_title: 'SwitchHosts개선!',
   use_proxy: '프록시 사용',
-  use_system_window_frame:
-    '시스템 창을 사용하려면, 프로그램 재시작이 필요합니다',
+  use_system_window_frame: '시스템 창을 사용하려면, 프로그램 재시작이 필요합니다',
   view: '뷰',
   where_is_my_data: '내 데이터는 어디에 저장되나요?',
   where_is_my_hosts: '내 호스트 파일은 어디에 있나요?',
   window: '창',
   write_mode: '쓰기 모드',
-  write_mode_append_help:
-    '시스템 호스트 파일 마지막 줄에 새 레코드를 추가합니다.',
-  write_mode_overwrite_help:
-    '시스템 호스트 파일에 새 레코드로 덮어씁니다.',
+  write_mode_append_help: '시스템 호스트 파일 마지막 줄에 새 레코드를 추가합니다.',
+  write_mode_overwrite_help: '시스템 호스트 파일에 새 레코드로 덮어씁니다.',
   write_mode_set: '쓰기 모드 설정',
   your_data_is: '데이터 저장 위치:',
   your_hosts_file_is: '호스트 파일 위치:',

@@ -72,9 +72,7 @@ const removeDuplicateRecords = (content: string): string => {
     if (duplicate_domains.length > 0) {
       new_lines.push(
         formatLine({
-          comment:
-            'invalid hosts (repeated): ' +
-            formatLine({ ip, domains: duplicate_domains }),
+          comment: 'invalid hosts (repeated): ' + formatLine({ ip, domains: duplicate_domains }),
         }),
       )
     }
@@ -83,10 +81,7 @@ const removeDuplicateRecords = (content: string): string => {
   return new_lines.join(os.EOL)
 }
 
-export default (
-  hosts_content: string,
-  options: INormalizeOptions = {},
-): string => {
+export default (hosts_content: string, options: INormalizeOptions = {}): string => {
   // 在这儿执行去重等等操作
   if (options.remove_duplicate_records) {
     hosts_content = removeDuplicateRecords(hosts_content)

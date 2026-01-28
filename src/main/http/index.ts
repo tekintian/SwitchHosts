@@ -33,7 +33,11 @@ const rateLimiter = {
     }
 
     record.count++
-    return { allowed: true, remaining: this.maxRequests - record.count, resetTime: record.resetTime }
+    return {
+      allowed: true,
+      remaining: this.maxRequests - record.count,
+      resetTime: record.resetTime,
+    }
   },
 
   cleanup() {
@@ -50,7 +54,11 @@ const rateLimiter = {
 setInterval(() => rateLimiter.cleanup(), 60000)
 
 // Middleware for rate limiting
-const rateLimitMiddleware = (req: express.Request, res: express.Response, next: express.NextFunction) => {
+const rateLimitMiddleware = (
+  req: express.Request,
+  res: express.Response,
+  next: express.NextFunction,
+) => {
   const ip = req.ip || req.socket.remoteAddress || 'unknown'
   const result = rateLimiter.check(ip)
 
@@ -71,7 +79,11 @@ const rateLimitMiddleware = (req: express.Request, res: express.Response, next: 
 }
 
 // Middleware for authentication
-const authMiddleware = (req: express.Request, res: express.Response, next: express.NextFunction) => {
+const authMiddleware = (
+  req: express.Request,
+  res: express.Response,
+  next: express.NextFunction,
+) => {
   const authHeader = req.headers.authorization
   const apiKey = req.headers['x-api-key']
 
@@ -132,7 +144,9 @@ export const start = (http_api_only_local: boolean): boolean => {
       if (http_api_only_local) {
         console.log('Note: API is only accessible from localhost')
       } else {
-        console.log('WARNING: API is accessible from all network interfaces. Use firewall to restrict access.')
+        console.log(
+          'WARNING: API is accessible from all network interfaces. Use firewall to restrict access.',
+        )
       }
     })
   } catch (e) {

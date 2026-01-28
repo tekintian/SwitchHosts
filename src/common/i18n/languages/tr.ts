@@ -19,7 +19,8 @@ export default {
   check_update: 'Güncellemeleri Kontrol Et',
   choice_mode: 'Seçim Modu',
   choice_mode_default: 'Varsayılan',
-  choice_mode_desc: 'Sadece en üstteki öğe için geçerlidir, her klasör kendi seçim modunu ayarlayabilir.',
+  choice_mode_desc:
+    'Sadece en üstteki öğe için geçerlidir, her klasör kendi seçim modunu ayarlayabilir.',
   choice_mode_multiple: 'Çoklu',
   choice_mode_single: 'Tekli',
   choices: 'Seçenekler',
@@ -71,7 +72,8 @@ export default {
   hour: 'saat',
   hours: 'saatler',
   http_api_on: 'HTTP API açık',
-  http_api_on_desc: '{0} portunda çalışır, Alfred gibi üçüncü parti yazılımlar tarafından hostları değiştirmek için kullanılabilir.',
+  http_api_on_desc:
+    '{0} portunda çalışır, Alfred gibi üçüncü parti yazılımlar tarafından hostları değiştirmek için kullanılabilir.',
   http_api_only_local: 'HTTP API sadece 127.0.0.1’i dinler',
   ignore_case: 'Büyük/Küçük Harf Duyarsız',
   import: 'İçe Aktar',
@@ -101,7 +103,8 @@ export default {
   move_to_trashcan: 'Çöp Kutusuna Taşı',
   multi_chose_folder_switch_all: 'çoklu seçim klasörü, alt öğelerin kontrolünü sağlar',
   need_to_relaunch: 'Yeniden başlatılması gerekiyor',
-  need_to_relaunch_after_setting_changed: 'Ayar değiştirildi ve uygulama yeniden başlatıldıktan sonra etkili olacak.',
+  need_to_relaunch_after_setting_changed:
+    'Ayar değiştirildi ve uygulama yeniden başlatıldıktan sonra etkili olacak.',
   never: 'Asla',
   new: 'Yeni',
   new_version_found: 'Yeni sürüm bulundu',
@@ -125,12 +128,13 @@ export default {
   remote: 'Uzak',
   remove_duplicate_records: 'Yinelenen kayıtları kaldır',
   remove_duplicate_records_desc:
-    'Bir alan birden fazla IP\'ye işaret ediyorsa, sadece ilk olanı etkili olacak ve sonrakiler yorum olarak dönüştürülecek.',
+    "Bir alan birden fazla IP'ye işaret ediyorsa, sadece ilk olanı etkili olacak ve sonrakiler yorum olarak dönüştürülecek.",
   replace: 'Değiştir',
   replace_all: 'Hepsini Değiştir',
   replace_history: 'Geçmişi Değiştir',
   reset: 'Sıfırla',
-  reset_data_dir_confirm: 'Veri klasörünü varsayılan adrese ({0}) geri yüklemek istediğinizden emin misiniz?',
+  reset_data_dir_confirm:
+    'Veri klasörünü varsayılan adrese ({0}) geri yüklemek istediğinizden emin misiniz?',
   reset_zoom: 'Yakınlaştırmayı Sıfırla',
   search: 'Ara',
   select_all: 'Hepsini Seç',
@@ -168,10 +172,11 @@ export default {
   url_placeholder: 'http:// veya https:// veya file://',
   usage_data_agree: 'Evet, anonimleştirilmiş kullanım verilerini gönder',
   usage_data_help:
-    'Anonim kullanım verilerini periyodik olarak göndererek SwitchHosts\'u iyileştirmemize yardımcı olmak ister misiniz?',
-  usage_data_title: 'SwitchHosts\'u Daha İyi Yapın!',
+    "Anonim kullanım verilerini periyodik olarak göndererek SwitchHosts'u iyileştirmemize yardımcı olmak ister misiniz?",
+  usage_data_title: "SwitchHosts'u Daha İyi Yapın!",
   use_proxy: 'Proxy Kullan',
-  use_system_window_frame: 'Sistem pencere çerçevesini kullanın, uygulamanın yeniden başlatılması gereklidir',
+  use_system_window_frame:
+    'Sistem pencere çerçevesini kullanın, uygulamanın yeniden başlatılması gereklidir',
   view: 'Görüntüle',
   where_is_my_data: 'Verilerim nerede saklanıyor?',
   where_is_my_hosts: 'Hosts dosyam nerede?',

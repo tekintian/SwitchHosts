@@ -1,4 +1,4 @@
-@import "../../styles/common";
+@import '../../styles/common';
 
 .root {
   @include code;
@@ -12,12 +12,13 @@
 
   &.read_only {
     :global {
-      .CodeMirror, .CodeMirror-gutters {
+      .CodeMirror,
+      .CodeMirror-gutters {
         //background-color: var(--swh-editor-read-only-bg);
       }
 
       .CodeMirror-cursor {
-        display: none !important
+        display: none !important;
       }
     }
   }
@@ -67,7 +68,7 @@
       font-size: 12px;
     }
 
-    .CodeMirror-scrollbar-filler{
+    .CodeMirror-scrollbar-filler {
       background: var(--swh-scrollbar-filler);
     }
   }

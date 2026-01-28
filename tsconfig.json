@@ -1,8 +1,8 @@
 {
   "compilerOptions": {
     "target": "esnext",
-    "module": "commonjs",
-    "moduleResolution": "node",
+    "module": "esnext",
+    "moduleResolution": "bundler",
     "experimentalDecorators": true,
     "importHelpers": true,
     "jsx": "react-jsx",
@@ -45,6 +45,9 @@
     "typings.d.ts"
   ],
   "exclude": [
+    "node_modules/@chakra-ui",
+    "node_modules/ahooks",
+    "node_modules/electron-updater",
     "node_modules",
     "lib",
     "es",
