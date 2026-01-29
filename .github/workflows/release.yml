@@ -64,7 +64,6 @@ jobs:
           CSC_LINK: ${{ secrets.WIN_CSC_LINK || '' }}
           CSC_KEY_PASSWORD: ${{ secrets.WIN_CSC_KEY_PASSWORD || '' }}
           IDENTITY: ''
-          MAKE_FOR: ${{ contains(matrix.os, 'macos') && 'mac' || contains(matrix.os, 'windows') && 'win' || 'linux' }}
           GH_TOKEN: ''
         shell: bash
 
@@ -97,7 +96,6 @@ jobs:
             dist/**/*.zip
             dist/**/*.AppImage
             dist/**/*.deb
-            dist/**/*.App
           if-no-files-found: warn
           retention-days: 3
 
