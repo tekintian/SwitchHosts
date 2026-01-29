@@ -1,12 +1,12 @@
 {
   "name": "switchhosts",
   "productName": "SwitchHosts",
-  "version": "4.2.0.6124",
+  "version": "2.0.0",
   "description": "Switch hosts quickly!",
   "main": "./main.js",
   "author": {
-    "name": "oldj",
-    "email": "oldj.wu@gmail.com",
+    "name": "tekintian",
+    "email": "tekintian@gmail.com",
     "url": "https://github.com/tekintian/SwitchHosts"
   },
   "homepage": "https://dev.tekin.cn",

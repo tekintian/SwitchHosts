@@ -143,6 +143,7 @@ const doMake = async () => {
       },
       win: {
         icon: 'assets/icon.ico',
+        sign: null,
         //requestedExecutionLevel: 'requireAdministrator'
       },
       nsis: {

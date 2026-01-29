@@ -17,7 +17,7 @@ env:
 
 jobs:
   build-macos-intel:
-    name: Build macOS
+    name: Build macOS intel
     runs-on: macos-15-intel
     steps:
       - name: Checkout code
@@ -88,8 +88,8 @@ jobs:
           rm -rf ${{ env.ELECTRON_BUILDER_CACHE }}
 
   build-macos-arm:
-    name: Build macOS
-    runs-on: macos-15
+    name: Build macOS arm
+    runs-on: macos-latest
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
@@ -97,7 +97,7 @@ jobs:
           fetch-depth: 0
 
       - name: Setup Node.js
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         with:
           node-version: ${{ env.NODE_VERSION }}
           cache: 'npm'
@@ -168,7 +168,7 @@ jobs:
           fetch-depth: 0
 
       - name: Setup Node.js
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         with:
           node-version: ${{ env.NODE_VERSION }}
           cache: 'npm'
@@ -194,8 +194,8 @@ jobs:
       - name: Build for Windows
         run: npm run make
         env:
-          CSC_LINK: ''
-          CSC_KEY_PASSWORD: ''
+          WIN_CSC_LINK: ''
+          WIN_CSC_KEY_PASSWORD: ''
           MAKE_FOR: win
           GH_TOKEN: ''
 
@@ -233,7 +233,7 @@ jobs:
           fetch-depth: 0
 
       - name: Setup Node.js
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         with:
           node-version: ${{ env.NODE_VERSION }}
           cache: 'npm'
