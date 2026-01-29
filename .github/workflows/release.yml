@@ -67,13 +67,26 @@ jobs:
           MAKE_FOR: ${{ contains(matrix.os, 'macos') && 'mac' || contains(matrix.os, 'windows') && 'win' || 'linux' }}
           GH_TOKEN: ''
 
+      - name: List dist contents
+        shell: bash
+        run: |
+          echo "=== DIST CONTENTS ==="
+          find dist -type f -name "*.dmg" -o -name "*.exe" -o -name "*.zip" -o -name "*.AppImage" -o -name "*.deb" | head -20 || echo "No installers found"
+          echo "=== ALL FILES ==="
+          ls -la dist/ | head -30
+
       - name: Upload artifacts
         uses: actions/upload-artifact@v4
         with:
           name: ${{ matrix.os }}-artifacts
-          path: dist/**
-          if-no-files-found: ignore
-          retention-days: 7
+          path: |
+            dist/*.dmg
+            dist/*.exe
+            dist/*.zip
+            dist/*.AppImage
+            dist/*.deb
+          if-no-files-found: warn
+          retention-days: 3
 
       - name: Cleanup Electron cache
         if: always()
