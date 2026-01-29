@@ -56,7 +56,7 @@ jobs:
           CI: true
 
       - name: Build for ${{ matrix.os }}
-        run: npm run make
+        run: npm run make 2>&1 | tee build.log
         env:
           APPLE_ID: ${{ secrets.APPLE_ID || '' }}
           APPLE_APP_SPECIFIC_PASSWORD: ${{ secrets.APPLE_APP_SPECIFIC_PASSWORD || '' }}
@@ -68,15 +68,24 @@ jobs:
           GH_TOKEN: ''
         shell: bash
 
+      - name: Show build log if failed
+        if: failure()
+        run: cat build.log
+
       - name: List dist contents
         shell: bash
         run: |
-          echo "=== DIST CONTENTS ==="
-          find dist -type f \( -name "*.dmg" -o -name "*.exe" -o -name "*.zip" -o -name "*.AppImage" -o -name "*.deb" \) 2>/dev/null || echo "No installers found"
+          echo "=== INSTALLER FILES ==="
+          find dist -type f \( -name "*.dmg" -o -name "*.exe" -o -name "*.zip" -o -name "*.AppImage" -o -name "*.deb" \) 2>/dev/null | sort || echo "No installers found"
+          echo ""
           echo "=== ALL DIRECTORIES ==="
-          find dist -type d 2>/dev/null || echo "No directories found"
-          echo "=== ALL FILES ==="
+          find dist -type d 2>/dev/null | head -20 || echo "No directories found"
+          echo ""
+          echo "=== DIST ROOT ==="
           ls -la dist/ 2>/dev/null || echo "dist/ empty or not exist"
+          echo ""
+          echo "=== APP BUNDLES (macOS) ==="
+          find dist -name "*.app" -type d 2>/dev/null || echo "No .app found"
 
       - name: Upload artifacts
         uses: actions/upload-artifact@v4

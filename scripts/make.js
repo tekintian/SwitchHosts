@@ -14,13 +14,13 @@ const { APP_NAME, root_dir, dist_dir, electronLanguages } = require('./vars')
 
 const TARGET_PLATFORMS_configs = {
   mac: {
-    mac: ['dmg'],
+    mac: ['dmg:x64', 'dmg:arm64'],
   },
   win: {
-    win: ['nsis:x64'],
+    win: ['nsis'],
   },
   linux: {
-    linux: ['AppImage:x64'],
+    linux: ['AppImage:x64', 'AppImage:arm64', 'deb:x64', 'deb:arm64'],
   },
   all: {
     mac: ['dmg:x64', 'dmg:arm64', 'zip:universal'],
