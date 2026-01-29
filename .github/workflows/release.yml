@@ -16,9 +16,80 @@ env:
   ELECTRON_BUILDER_CACHE: ${{ github.workspace }}/.cache/electron-builder
 
 jobs:
-  build-macos:
+  build-macos-intel:
     name: Build macOS
-    runs-on: macos-latest
+    runs-on: macos-15-intel
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Cache Electron
+        uses: actions/cache@v4
+        with:
+          path: |
+            ${{ env.ELECTRON_CACHE }}
+            ${{ env.ELECTRON_BUILDER_CACHE }}
+          key: ${{ runner.os }}-electron-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-electron-
+
+      - name: Build application
+        run: npm run build
+        env:
+          CI: true
+
+      - name: Build for macOS
+        run: npm run make 2>&1 | tee build.log
+        env:
+          APPLE_ID: ${{ secrets.APPLE_ID || '' }}
+          APPLE_APP_SPECIFIC_PASSWORD: ${{ secrets.APPLE_APP_SPECIFIC_PASSWORD || '' }}
+          TEAM_ID: ${{ secrets.TEAM_ID || '' }}
+          IDENTITY: ''
+          MAKE_FOR: mac
+          GH_TOKEN: ''
+
+      - name: Show build log if failed
+        if: failure()
+        run: cat build.log
+
+      - name: List dist contents
+        run: |
+          echo "=== INSTALLER FILES ==="
+          find dist -type f \( -name "*.dmg" -o -name "*.zip" \) 2>/dev/null | sort || echo "No installers found"
+          echo ""
+          echo "=== ALL FILES ==="
+          ls -la dist/ 2>/dev/null || echo "dist/ empty or not exist"
+
+      - name: Upload artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: macos-artifacts
+          path: |
+            dist/**/*.dmg
+            dist/**/*.zip
+          if-no-files-found: warn
+          retention-days: 3
+
+      - name: Cleanup Electron cache
+        if: always()
+        run: |
+          rm -rf ${{ env.ELECTRON_CACHE }}
+          rm -rf ${{ env.ELECTRON_BUILDER_CACHE }}
+
+  build-macos-arm:
+    name: Build macOS
+    runs-on: macos-15
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
@@ -123,8 +194,8 @@ jobs:
       - name: Build for Windows
         run: npm run make
         env:
-          CSC_LINK: ${{ secrets.WIN_CSC_LINK || '' }}
-          CSC_KEY_PASSWORD: ${{ secrets.WIN_CSC_KEY_PASSWORD || '' }}
+          CSC_LINK: ''
+          CSC_KEY_PASSWORD: ''
           MAKE_FOR: win
           GH_TOKEN: ''
 
@@ -189,7 +260,7 @@ jobs:
         run: npm run make
         env:
           MAKE_FOR: linux
-          GH_TOKEN: ''
+          GH_TOKEN: 'dummy'
 
       - name: List dist contents
         run: |
@@ -217,7 +288,7 @@ jobs:
 
   upload-release:
     name: Upload to Releases
-    needs: [build-macos, build-windows, build-linux]
+    needs: [build-macos-intel, build-macos-arm, build-windows, build-linux]
     runs-on: ubuntu-latest
     if: startsWith(github.ref, 'refs/tags/')
 
