@@ -75,25 +75,31 @@ jobs:
           if-no-files-found: ignore
           retention-days: 7
 
-      - name: Upload to GitHub Releases
-        uses: softprops/action-gh-release@v1
-        if: startsWith(github.ref, 'refs/tags/') && matrix.os == 'ubuntu-latest'
-        with:
-          files: |
-            dist/*.dmg
-            dist/*.exe
-            dist/*.zip
-            dist/*.AppImage
-            dist/*.deb
-          prerelease: ${{ contains(github.ref, '-beta') || contains(github.ref, '-alpha') }}
-          fail_on_unmatched_files: false
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
       - name: Cleanup Electron cache
         if: always()
         shell: bash
         run: |
           rm -rf ${{ env.ELECTRON_CACHE }}
           rm -rf ${{ env.ELECTRON_BUILDER_CACHE }}
+
+  upload-release:
+    name: Upload to Releases
+    needs: release
+    runs-on: ubuntu-latest
+    if: startsWith(github.ref, 'refs/tags/')
+
+    steps:
+      - name: Download all artifacts
+        uses: actions/download-artifact@v4
+        with:
+          path: artifacts/
+
+      - name: Upload to GitHub Releases
+        uses: softprops/action-gh-release@v1
+        with:
+          files: artifacts/**/*
+          prerelease: ${{ contains(github.ref, '-beta') || contains(github.ref, '-alpha') }}
+          fail_on_unmatched_files: false
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
