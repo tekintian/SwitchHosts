@@ -22,11 +22,6 @@ const TARGET_PLATFORMS_configs = {
   linux: {
     linux: ['AppImage:x64', 'AppImage:arm64', 'deb:x64', 'deb:arm64'],
   },
-  all: {
-    mac: ['dmg:x64', 'dmg:arm64', 'zip:universal'],
-    win: ['nsis:ia32', 'nsis:x64', 'nsis:arm64', 'portable:x64', 'zip:x64' /* , 'appx:x64'*/],
-    linux: ['AppImage:x64', 'AppImage:arm64', 'deb:x64', 'deb:arm64'],
-  },
 }
 
 const { APP_BUNDLE_ID, IDENTITY } = process.env
@@ -81,7 +76,7 @@ const doMake = async () => {
   console.log('-> make...')
 
   const { MAKE_FOR } = process.env
-  let targets = TARGET_PLATFORMS_configs.all
+  let targets
 
   cfg_common.compression = 'maximum'
 
@@ -94,6 +89,8 @@ const doMake = async () => {
     targets = TARGET_PLATFORMS_configs.win
   } else if (MAKE_FOR === 'linux') {
     targets = TARGET_PLATFORMS_configs.linux
+  } else {
+    throw new Error(`Unknown MAKE_FOR value: ${MAKE_FOR}`)
   }
 
   await builder.build({
@@ -190,6 +187,7 @@ const doMake = async () => {
 
     console.log('-> make Done!')
   } catch (e) {
-    console.log(e)
+    console.error('Error:', e)
+    process.exit(1)
   }
 })()
