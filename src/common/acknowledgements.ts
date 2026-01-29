@@ -5,6 +5,7 @@
  */
 
 export default [
+  { name: 'tekintian', link: 'https://dev.tekin.cn' },
   { name: 'oldj', link: 'https://github.com/oldj' },
   { name: 'Allen.M', link: 'https://github.com/allenm' },
   { name: 'Charles Tang', link: 'https://github.com/charlestang' },
