@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>bundleid</key>
-	<string>switchhosts.oldj.net</string>
+	<string>cn.tekin.switchhosts</string>
 	<key>category</key>
 	<string>Tools</string>
 	<key>connections</key>
@@ -22,8 +22,8 @@
 			</dict>
 		</array>
 	</dict>
-	<key>createdby</key>
-	<string>oldj</string>
+	<key>updatedby</key>
+	<string>tekintian</string>
 	<key>description</key>
 	<string>Switch hosts quickly!</string>
 	<key>disabled</key>

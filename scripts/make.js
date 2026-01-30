@@ -1,7 +1,7 @@
 /**
  * make.js
- * @author: oldj
- * @homepage: https://oldj.net
+ * @author: tekintian
+ * @homepage: https://dev.tekin.cn
  */
 
 require('dotenv').config()
@@ -170,7 +170,7 @@ const doMake = async () => {
       },
       publish: {
         provider: 'github',
-        owner: 'oldj',
+        owner: 'tekintian',
         repo: 'SwitchHosts',
       },
     },
@@ -179,16 +179,16 @@ const doMake = async () => {
   console.log('done!')
 }
 
-;(async () => {
-  try {
-    await beforeMake()
-    await doMake()
-    await afterMake()
-    //await macSign()
+  ; (async () => {
+    try {
+      await beforeMake()
+      await doMake()
+      await afterMake()
+      //await macSign()
 
-    console.log('-> make Done!')
-  } catch (e) {
-    console.error('Error:', e)
-    process.exit(1)
-  }
-})()
+      console.log('-> make Done!')
+    } catch (e) {
+      console.error('Error:', e)
+      process.exit(1)
+    }
+  })()
