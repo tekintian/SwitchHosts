@@ -52,9 +52,9 @@ jobs:
       - name: Build for macOS
         run: npm run make 2>&1 | tee build.log
         env:
-          APPLE_ID: ${{ secrets.APPLE_ID || '' }}
-          APPLE_APP_SPECIFIC_PASSWORD: ${{ secrets.APPLE_APP_SPECIFIC_PASSWORD || '' }}
-          TEAM_ID: ${{ secrets.TEAM_ID || '' }}
+          # APPLE_ID: ${{ secrets.APPLE_ID || '' }}
+          # APPLE_APP_SPECIFIC_PASSWORD: ${{ secrets.APPLE_APP_SPECIFIC_PASSWORD || '' }}
+          # TEAM_ID: ${{ secrets.TEAM_ID || '' }}
           IDENTITY: ''
           MAKE_FOR: mac
           GH_TOKEN: ''
@@ -76,7 +76,7 @@ jobs:
         with:
           name: macos-artifacts
           path: |
-            dist/**/*.dmg
+            dist/*.dmg
             dist/**/*.zip
           if-no-files-found: warn
           retention-days: 3
@@ -147,7 +147,7 @@ jobs:
         with:
           name: macos-artifacts
           path: |
-            dist/**/*.dmg
+            dist/*.dmg
             dist/**/*.zip
           if-no-files-found: warn
           retention-days: 3
@@ -194,8 +194,6 @@ jobs:
       - name: Build for Windows
         run: npm run make
         env:
-          WIN_CSC_LINK: ''
-          WIN_CSC_KEY_PASSWORD: ''
           MAKE_FOR: win
           GH_TOKEN: ''
 
@@ -260,7 +258,8 @@ jobs:
         run: npm run make
         env:
           MAKE_FOR: linux
-          GH_TOKEN: 'dummy'
+          GH_TOKEN: ''
+          CI: ''
 
       - name: List dist contents
         run: |
