@@ -58,6 +58,7 @@ jobs:
           IDENTITY: ''
           MAKE_FOR: mac
           GH_TOKEN: ''
+          CI: ''
 
       - name: Show build log if failed
         if: failure()
@@ -74,7 +75,7 @@ jobs:
       - name: Upload artifacts
         uses: actions/upload-artifact@v4
         with:
-          name: macos-artifacts
+          name: macos-arm-artifacts
           path: |
             dist/*.dmg
             dist/**/*.zip
@@ -129,6 +130,7 @@ jobs:
           IDENTITY: ''
           MAKE_FOR: mac
           GH_TOKEN: ''
+          CI: ''
 
       - name: Show build log if failed
         if: failure()
@@ -145,7 +147,7 @@ jobs:
       - name: Upload artifacts
         uses: actions/upload-artifact@v4
         with:
-          name: macos-artifacts
+          name: macos-arm-artifacts
           path: |
             dist/*.dmg
             dist/**/*.zip
@@ -196,6 +198,7 @@ jobs:
         env:
           MAKE_FOR: win
           GH_TOKEN: ''
+          CI: ''
 
       - name: List dist contents
         run: |

@@ -168,11 +168,7 @@ const doMake = async () => {
           GenericName: 'An App for hosts management and switching.',
         },
       },
-      publish: {
-        provider: 'github',
-        owner: 'tekintian',
-        repo: 'SwitchHosts',
-      },
+      publish: null,
     },
   })
 
